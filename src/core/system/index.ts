@@ -12,13 +12,13 @@ export const system = (args: Record<string, Props | boolean> = {}) => {
     // shortcut declaration
     // example: { "textAlign": center }
     if (typeof conf === `boolean`) {
-      config[key] = {};
+      config[key] = createStyle(key, { properties: [key] });
       return;
     }
 
     // default declaration
     // example: { "marginLeft": { properties: ["marginLeft"], scale: "space" } }
-    config[key] = createStyle(key, conf);
+    config[key] = createStyle(key, { properties: conf.properties, scale: conf.scale });
   });
 
   // @TODO: Parser will merge all properties and handle them.
