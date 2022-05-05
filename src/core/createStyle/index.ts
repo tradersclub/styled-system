@@ -21,7 +21,7 @@ export const createStyle = (key: string, { properties, scale }: Props) => {
         const minWidth = breakpoints[breakpoint];
         const mediaQuery = createMediaQuery(minWidth);
         const valueOnThisBreakpoint = parsedValue[breakpoint];
-        const valueOnThisScale = scaleValues?.[valueOnThisBreakpoint] ?? valueOnThisBreakpoint;
+        const valueOnThisScale = scaleValues?.[valueOnThisBreakpoint] ?? valueOnThisBreakpoint; // Forward raw value, if doesn't have a scale
 
         // If we have min-width (valid media query)
         if (minWidth) {
@@ -47,7 +47,7 @@ export const createStyle = (key: string, { properties, scale }: Props) => {
     // If user don't use breakpoints
     // Example: marginLeft="spacing64"
     properties.forEach((prop) => {
-      cssAttributes[prop] = scaleValues?.[parsedValue] ?? parsedValue;
+      cssAttributes[prop] = scaleValues?.[parsedValue] ?? parsedValue; // Forward raw value, if doesn't have a scale
     });
 
     return cssAttributes;
