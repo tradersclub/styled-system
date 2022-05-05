@@ -7,10 +7,6 @@
 TradersClub Frontend Styled System Helper.
 </div>
 
-## Official Documentation
-
-[styled-system](https://styled-system.com/)
-
 ## Installation
 
 1. **Create a Github Token to Auth in NPM:**
@@ -47,7 +43,7 @@ npm login --scope=@tradersclub --registry=https://npm.pkg.github.com
 
 ## Usage
 
-**1. Import any parser on your styled-components
+**1. Import any parser on your styled-components**
 
 ```tsx
 import { margin } from '@tradersclub/styled-system';
@@ -57,7 +53,7 @@ expost const Container = styled.div`
 `;
 ```
 
-**2. You can use it with your theme definitions (and responsivity if necessary).
+**2. You can use it with your theme definitions (and responsivity if necessary).**
 
 ```tsx
 // With default value
