@@ -1,6 +1,6 @@
-import { get, createParser } from '@core/index';
+import { css } from '@css/index';
 
-import css from '../css';
+import { get, createParser } from '@core/index';
 
 export const variant = ({
   scale,

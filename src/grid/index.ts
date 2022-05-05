@@ -32,4 +32,5 @@ const config = {
 };
 
 export const grid = system(config);
+
 export default grid;
