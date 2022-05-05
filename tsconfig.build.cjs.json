@@ -1,0 +1,24 @@
+{
+  // This config is for emitting declarations (.d.ts) only
+  // Actual .ts source files are transpiled via babel
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es5",
+    "declaration": false,
+    "noEmit": false,
+    "emitDeclarationOnly": false,
+    "outDir": "cjs",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "downlevelIteration": true,
+    "plugins": [
+      // Transform paths in output .js files
+      { "transform": "typescript-transform-paths" },
+
+      // Transform absolut paths in output .d.ts files (Include this line if you output declarations files)
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
+  },
+  "exclude": []
+}
