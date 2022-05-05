@@ -1,4 +1,4 @@
-import { system } from '../core';
+import { system } from '@core/index';
 
 const config = {
   animation: true,

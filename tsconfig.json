@@ -15,7 +15,24 @@
     "jsx": "react",
     "baseUrl": "./src",
     "paths": {
-      "@core/*": ["./core/*"]
+      "@core/*": ["./core/*"],
+      "@colors/*": ["./colors/*"],
+      "@animation/*": ["./animation/*"],
+      "@border/*": ["./border/*"],
+      "@css/*": ["./css/*"],
+      "@cursor/*": ["./cursor/*"],
+      "@flexbox/*": ["./flexbox/*"],
+      "@grid/*": ["./grid/*"],
+      "@layout/*": ["./layout/*"],
+      "@list-style/*": ["./list-style/*"],
+      "@object-fit/*": ["./object-fit/*"],
+      "@position/*": ["./position/*"],
+      "@props/*": ["./props/*"],
+      "@space/*": ["./space/*"],
+      "@styled-system/*": ["./styled-system/*"],
+      "@theme-get/*": ["./theme-get/*"],
+      "@typography/*": ["./typography/*"],
+      "@variant/*": ["./variant/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts"],

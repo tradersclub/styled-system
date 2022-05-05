@@ -1,34 +1,35 @@
-import { createStyleFunction, createParser } from '../core';
+import { createStyleFunction, createParser } from '@core/index';
+
 // v4 api shims
-import layout from '../layout';
-import space from '../space';
-import color from '../color';
-import typography from '../typography';
+import animation from '../animation';
+import background from '@colors/background';
+import border from '../border';
+import color from '@colors/color';
 import flexbox from '../flexbox';
 import grid from '../grid';
-import border from '../border';
-import background from '../background';
-import position from '../position';
-import animation from '../animation';
+import layout from '../layout';
 import listStyle from '../list-style';
+import position from '../position';
+import space from '../space';
+import typography from '../typography';
 
-export { get, createParser, createStyleFunction, compose, system } from '../core';
+export { get, createParser, createStyleFunction, compose, system } from '@core/index';
 
 export { space } from '../space';
-export { color } from '../color';
+export { color } from '@colors/color';
 export { layout } from '../layout';
 export { typography } from '../typography';
 export { flexbox } from '../flexbox';
 export { border } from '../border';
-export { background } from '../background';
+export { background } from '@colors/background';
 export { position } from '../position';
 export { grid } from '../grid';
-export { shadow } from '../shadow';
+export { shadow } from '@colors/shadow';
 export { cursor } from '../cursor';
 export { animation } from '../animation';
 export { objectFit } from '../object-fit';
 export { listStyle } from '../list-style';
-export { default as boxShadow, default as textShadow } from '../shadow';
+export { default as boxShadow, default as textShadow } from '@colors/shadow';
 
 export { variant, buttonStyle, textStyle, colorStyle } from '../variant';
 
