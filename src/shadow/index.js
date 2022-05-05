@@ -1,14 +1,14 @@
-import { system } from '../core'
+import { system } from '@core/index';
 
 export const shadow = system({
   boxShadow: {
-    property: 'boxShadow',
-    scale: 'shadows',
+    property: `boxShadow`,
+    scale: `shadows`,
   },
   textShadow: {
-    property: 'textShadow',
-    scale: 'shadows',
+    property: `textShadow`,
+    scale: `shadows`,
   },
-})
+});
 
-export default shadow
+export default shadow;

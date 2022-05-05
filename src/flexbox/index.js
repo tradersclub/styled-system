@@ -1,4 +1,4 @@
-import { system } from '../core'
+import { system } from '@core/index';
 
 const config = {
   alignItems: true,
@@ -15,8 +15,8 @@ const config = {
   justifySelf: true,
   alignSelf: true,
   order: true,
-}
+};
 
-export const flexbox = system(config)
+export const flexbox = system(config);
 
-export default flexbox
+export default flexbox;

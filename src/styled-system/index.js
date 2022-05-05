@@ -1,18 +1,19 @@
-import { createStyleFunction, createParser } from '../core';
+import { createStyleFunction, createParser } from '@core/index';
+
 // v4 api shims
-import layout from '../layout';
-import space from '../space';
+import animation from '../animation';
+import background from '../background';
+import border from '../border';
 import color from '../color';
-import typography from '../typography';
 import flexbox from '../flexbox';
 import grid from '../grid';
-import border from '../border';
-import background from '../background';
-import position from '../position';
-import animation from '../animation';
+import layout from '../layout';
 import listStyle from '../list-style';
+import position from '../position';
+import space from '../space';
+import typography from '../typography';
 
-export { get, createParser, createStyleFunction, compose, system } from '../core';
+export { get, createParser, createStyleFunction, compose, system } from '@core/index';
 
 export { space } from '../space';
 export { color } from '../color';

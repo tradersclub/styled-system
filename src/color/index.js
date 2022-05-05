@@ -1,17 +1,17 @@
-import { system } from '../core';
+import { system } from '@core/index';
 
 const config = {
   textColor: {
-    property: 'color',
-    scale: 'colors',
+    property: `color`,
+    scale: `colors`,
   },
   backgroundColor: {
-    property: 'backgroundColor',
-    scale: 'colors',
+    property: `backgroundColor`,
+    scale: `colors`,
   },
   fill: {
-    property: 'fill',
-    scale: 'colors',
+    property: `fill`,
+    scale: `colors`,
   },
   opacity: true,
 };

@@ -1,4 +1,4 @@
-import { system } from '../core';
+import { system } from '@core/index';
 
 const defaults = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
@@ -6,29 +6,29 @@ const defaults = {
 
 const config = {
   fontFamily: {
-    property: 'fontFamily',
-    scale: 'fonts',
+    property: `fontFamily`,
+    scale: `fonts`,
   },
   fontSize: {
-    property: 'fontSize',
-    scale: 'fontSizes',
+    property: `fontSize`,
+    scale: `fontSizes`,
     defaultScale: defaults.fontSizes,
   },
   fontWeight: {
-    property: 'fontWeight',
-    scale: 'fontWeights',
+    property: `fontWeight`,
+    scale: `fontWeights`,
   },
   lineHeight: {
-    property: 'lineHeight',
-    scale: 'lineHeights',
+    property: `lineHeight`,
+    scale: `lineHeights`,
   },
   letterSpacing: {
-    property: 'letterSpacing',
-    scale: 'letterSpacings',
+    property: `letterSpacing`,
+    scale: `letterSpacings`,
   },
   textIndent: {
-    property: 'textIndent',
-    scale: 'space',
+    property: `textIndent`,
+    scale: `space`,
   },
   textTransform: true,
   textDecoration: true,
