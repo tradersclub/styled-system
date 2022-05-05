@@ -1,11 +1,21 @@
 {
   "name": "@tradersclub/styled-system",
+  "version": "5.8.1",
   "typings": "index.d.ts",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "sideEffects": false,
   "scripts": {
     "build": "npx rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./**/*.{ts,js,jsx,tsx}": [
+      "yarn eslint --fix",
+      "yarn prettier --write",
+      "yarn ts-prune --error"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "7.14.3",
@@ -14,13 +24,15 @@
     "@babel/preset-env": "7.14.2",
     "@babel/preset-react": "7.13.13",
     "@babel/register": "7.13.16",
+    "@commitlint/cli": "16.2.4",
+    "@commitlint/config-conventional": "16.2.4",
     "@rollup/plugin-commonjs": "17.1.0",
     "@rollup/plugin-node-resolve": "11.2.0",
     "@types/styled-components": "5.1.12",
     "@typescript-eslint/eslint-plugin": "5.22.0",
     "@typescript-eslint/parser": "5.22.0",
     "csstype": "3.0.8",
-    "eslint": "8.13.0",
+    "eslint": "8.14.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-typescript": "2.7.1",
@@ -30,13 +42,13 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.4.0",
     "eslint-plugin-unicorn": "42.0.0",
-    "husky": "4.3.8",
+    "husky": "7.0.4",
     "jest": "26.6.3",
     "jest-emotion": "10.0.32",
     "jest-styled-components": "7.0.4",
     "lerna": "3.22.1",
-    "lint-staged": "10.5.4",
-    "prettier": "2.3.2",
+    "lint-staged": "12.4.1",
+    "prettier": "2.6.2",
     "react": "16.13.1",
     "react-test-renderer": "16.13.1",
     "styled-components": "5.1.1",
@@ -44,21 +56,11 @@
     "typescript": "4.6.4",
     "typescript-transform-paths": "3.3.1"
   },
+  "dependencies": {
+    "object-assign": "4.1.1"
+  },
   "peerDependencies": {
     "styled-components": ">=5"
-  },
-  "jest": {
-    "testMatch": [
-      "**/src/**/test/*.js"
-    ],
-    "collectCoverageFrom": [
-      "**/src/**/src/*.js"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "html"
-    ]
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -66,20 +68,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/tradersclub/styled-system.git"
-  },
-  "husky": {
-    "hooks": {
-      "precommit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "dependencies": {
-    "object-assign": "4.1.1"
-  },
-  "version": "5.8.1"
+  }
 }

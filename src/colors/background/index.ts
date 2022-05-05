@@ -6,12 +6,13 @@ const config = {
   backgroundSize: true,
   backgroundPosition: true,
   backgroundRepeat: true,
-};
 
-config.bgImage = config.backgroundImage;
-config.bgSize = config.backgroundSize;
-config.bgPosition = config.backgroundPosition;
-config.bgRepeat = config.backgroundRepeat;
+  // Alias
+  bgImage: true,
+  bgSize: true,
+  bgPosition: true,
+  bgRepeat: true,
+};
 
 export const background = system(config);
 

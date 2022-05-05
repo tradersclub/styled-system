@@ -13,9 +13,13 @@ const config = {
     property: `fill`,
     scale: `colors`,
   },
+  bg: {
+    property: `backgroundColor`,
+    scale: `colors`,
+  },
   opacity: true,
 };
-config.bg = config.backgroundColor;
 
 export const color = system(config);
+
 export default color;

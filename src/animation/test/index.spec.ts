@@ -1,4 +1,4 @@
-import animation from '..';
+import animation from '@animation/index';
 
 test(`returns animation styles`, () => {
   const style = animation({
