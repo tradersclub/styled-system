@@ -1,8 +1,17 @@
-dist
+# dependencies
 node_modules
-.nyc_output
-coverage*
-site
-public
-package-lock.json
+
+# production
+esm
+cjs
+types
+tsconfig.build.cjs.tsbuildinfo
+tsconfig.build.esm.tsbuildinfo
+
+# misc
 .DS_Store
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

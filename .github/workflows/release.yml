@@ -2,8 +2,11 @@ name: Release
 on:
   push:
     branches:
-      - master
-  workflow_dispatch:
+      - main
+
+  # pull_request:
+  #   branches:
+  #     - main
 
 jobs:
   release:
@@ -15,16 +18,29 @@ jobs:
       - name: Setup
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: '14.17.0'
           registry-url: https://npm.pkg.github.com/
 
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        if: steps.cache.outputs.cache-hit != 'true' # It will run install dependencies just if hash of yarn.lock changed
+        run: yarn install --frozen-lockfile --prefer-offline
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGES_TOKEN }}
 
-      - name: Build
-        run: yarn build
+      - name: Build CJS
+        run: yarn build:cjs
+
+      - name: Build ESM
+        run: yarn build:esm
 
       - name: Create Tag
         id: tag_version
@@ -50,10 +66,15 @@ jobs:
       - name: Commit Updated Version
         run: npm version ${{ steps.tag_version.outputs.new_version }}
 
-      - name: Push Updated Version
-        run: git push
-
       - name: Publish
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGES_TOKEN }}
+
+      # - name: Send message to Slack API
+      #   uses: archive/github-actions-slack@v2.0.0
+      #   with:
+      #     slack-bot-user-oauth-access-token: ${{ secrets.RELEASE_SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
+      #     slack-channel: C01S0JCEUSU
+      #     slack-text: '*Nova versão ${{ steps.tag_version.outputs.release_type }} ${{ steps.tag_version.outputs.new_tag }} do TCDesignSystem* :rocket:\n\n${{ steps.tag_version.outputs.changelog }}'
+      #     slack-optional-icon_emoji: ':fire:'
