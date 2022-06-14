@@ -38,25 +38,25 @@ export type Scale = ObjectOrArray<number | string>;
 export type TLengthStyledSystem = string | 0 | number;
 
 export interface Theme<TLength = TLengthStyledSystem> {
-  breakpoints?: ObjectOrArray<number | string | symbol>;
-  mediaQueries?: { [size: string]: string };
-  space?: ObjectOrArray<CSS.Property.Margin<number | string>>;
-  fontSizes?: ObjectOrArray<CSS.Property.FontSize<number>>;
-  colors?: ObjectOrArray<CSS.Property.Color>;
-  fonts?: ObjectOrArray<CSS.Property.FontFamily>;
-  fontWeights?: ObjectOrArray<CSS.Property.FontWeight>;
-  lineHeights?: ObjectOrArray<CSS.Property.LineHeight<TLength>>;
-  letterSpacings?: ObjectOrArray<CSS.Property.LetterSpacing<TLength>>;
-  sizes?: ObjectOrArray<CSS.Property.Height<{}> | CSS.Property.Width<{}>>;
+  buttons?: ObjectOrArray<CSS.StandardProperties>;
   borders?: ObjectOrArray<CSS.Property.Border<{}>>;
   borderStyles?: ObjectOrArray<CSS.Property.Border<{}>>;
   borderWidths?: ObjectOrArray<CSS.Property.BorderWidth<TLength>>;
+  breakpoints?: ObjectOrArray<number | string | symbol>;
+  colors?: ObjectOrArray<CSS.Property.Color>;
+  colorStyles?: ObjectOrArray<CSS.StandardProperties>;
+  fonts?: ObjectOrArray<CSS.Property.FontFamily>;
+  fontSizes?: ObjectOrArray<CSS.Property.FontSize<number>>;
+  fontWeights?: ObjectOrArray<CSS.Property.FontWeight>;
+  letterSpacings?: ObjectOrArray<CSS.Property.LetterSpacing<TLength>>;
+  lineHeights?: ObjectOrArray<CSS.Property.LineHeight<TLength>>;
+  mediaQueries?: { [size: string]: string };
+  space?: ObjectOrArray<CSS.Property.Margin<number | string>>;
+  sizes?: ObjectOrArray<CSS.Property.Height<{}> | CSS.Property.Width<{}>>;
   radii?: ObjectOrArray<CSS.Property.BorderRadius<TLength>>;
   shadows?: ObjectOrArray<CSS.Property.BoxShadow>;
-  zIndices?: ObjectOrArray<CSS.Property.ZIndex>;
-  buttons?: ObjectOrArray<CSS.StandardProperties>;
-  colorStyles?: ObjectOrArray<CSS.StandardProperties>;
   textStyles?: ObjectOrArray<CSS.StandardProperties>;
+  zIndices?: ObjectOrArray<CSS.Property.ZIndex>;
 }
 
 export type RequiredTheme = Required<DefaultTheme>;
@@ -1620,6 +1620,15 @@ export interface AnimationProps<ThemeType extends Theme = RequiredTheme> {
 }
 
 export const animation: styleFn;
+
+export interface MotionProps<
+  ThemeType extends Theme = RequiredTheme,
+  TVal = ThemeValue<'motion', ThemeType>,
+> {
+  motion?: ResponsiveValue<TVal, ThemeType>;
+}
+
+export const motion: styleFn;
 
 export interface ObjectFitProps<ThemeType extends Theme = RequiredTheme> {
   /**

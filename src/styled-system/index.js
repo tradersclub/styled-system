@@ -1,34 +1,35 @@
 import { createStyleFunction, createParser } from '../core';
 // v4 api shims
-import layout from '../layout';
-import space from '../space';
+import animation from '../animation';
+import background from '../background';
+import border from '../border';
 import color from '../color';
-import typography from '../typography';
 import flexbox from '../flexbox';
 import grid from '../grid';
-import border from '../border';
-import background from '../background';
-import position from '../position';
-import animation from '../animation';
+import layout from '../layout';
 import listStyle from '../list-style';
+import position from '../position';
+import space from '../space';
+import transition from '../transition';
+import typography from '../typography';
 
 export { get, createParser, createStyleFunction, compose, system } from '../core';
 
-export { space } from '../space';
-export { color } from '../color';
-export { layout } from '../layout';
-export { typography } from '../typography';
-export { flexbox } from '../flexbox';
-export { border } from '../border';
-export { background } from '../background';
-export { position } from '../position';
-export { grid } from '../grid';
-export { shadow } from '../shadow';
-export { cursor } from '../cursor';
 export { animation } from '../animation';
-export { objectFit } from '../object-fit';
+export { background } from '../background';
+export { border } from '../border';
+export { color } from '../color';
+export { cursor } from '../cursor';
+export { flexbox } from '../flexbox';
+export { grid } from '../grid';
+export { layout } from '../layout';
 export { listStyle } from '../list-style';
-export { default as boxShadow, default as textShadow } from '../shadow';
+export { objectFit } from '../object-fit';
+export { position } from '../position';
+export { shadow, default as boxShadow, default as textShadow } from '../shadow';
+export { space } from '../space';
+export { transition } from '../transition';
+export { typography } from '../typography';
 
 export { variant, buttonStyle, textStyle, colorStyle } from '../variant';
 
@@ -129,6 +130,7 @@ const {
   animationFillMode,
   animationPlayState,
 } = animation;
+const { motion } = transition;
 const { listStyleImage, listStylePosition, listStyleType } = listStyle;
 export { default as borders } from '../border';
 export {
@@ -234,6 +236,8 @@ export {
   animationIterationCount,
   animationFillMode,
   animationPlayState,
+  // transition
+  motion,
   // list style
   listStyleImage,
   listStylePosition,
