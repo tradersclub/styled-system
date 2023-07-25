@@ -45,7 +45,7 @@ const propNames = all.propNames.reduce((acc, current) => {
 }, {});
 
 export const omit = (props) => {
-  return props.reduce((acc, key) => {
+  return Object.keys(props).reduce((acc, key) => {
     if (!propNames[key]) {
       acc[key] = props[key];
     }
@@ -53,7 +53,7 @@ export const omit = (props) => {
 };
 
 export const pick = (props) => {
-  return props.reduce((acc, key) => {
+  return Object.keys(props).reduce((acc, key) => {
     if (propNames[key]) {
       acc[key?.[0] !== '$' ? `$${key}` : key] = props[key];
     }
