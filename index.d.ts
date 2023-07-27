@@ -66,10 +66,9 @@ export type BreakpointsValue<T, ThemeType extends Theme = RequiredTheme> = Recor
   T
 >;
 
-export type ResponsiveValue<T, ThemeType extends Theme = RequiredTheme> =
-  | T
-  | null
-  | Partial<BreakpointsValue<T, ThemeType>>;
+export type ResponsiveValue<T, ThemeType extends Theme = RequiredTheme> = T extends undefined | null
+  ? null
+  : T | Partial<BreakpointsValue<T, ThemeType>>;
 
 export type ThemeValue<
   K extends keyof CurrentTheme,
