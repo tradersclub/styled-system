@@ -24,6 +24,9 @@ describe('shouldForwardProp_function', () => {
   it('null value returns true', () => {
     expect(shouldForwardProp(null)).toBe(true);
   });
+  it('borderRadius value returns false', () => {
+    expect(shouldForwardProp('borderRadius')).toBe(false);
+  });
 
   // Tests that a number returns true
   it('number returns true', () => {
