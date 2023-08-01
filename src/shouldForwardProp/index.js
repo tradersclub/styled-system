@@ -5,9 +5,11 @@ import { colorConfig } from '../color';
 import { scales, transforms } from '../css';
 import { flexBoxConfig } from '../flexbox';
 import { spaceConfig } from '../space';
+import { typographyConfig } from '../typography';
 
 export function shouldForwardProp(propName) {
   return !(
+    typographyConfig[propName] ||
     backgroundConfig[propName] ||
     animationConfig[propName] ||
     borderConfig[propName] ||
