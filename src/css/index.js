@@ -39,7 +39,7 @@ const multiples = {
   size: ['width', 'height'],
 };
 
-const scales = {
+export const scales = {
   color: 'colors',
   backgroundColor: 'colors',
   borderColor: 'colors',
@@ -129,7 +129,7 @@ const positiveOrNegative = (scale, value) => {
   return n * -1;
 };
 
-const transforms = [
+export const transforms = [
   'margin',
   'marginTop',
   'marginRight',
