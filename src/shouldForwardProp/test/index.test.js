@@ -50,8 +50,8 @@ describe('shouldForwardProp_function', () => {
     expect(shouldForwardProp('typography')).toBe(false);
   });
 
-  it('invalid prop type returns false', () => {
-    expect(shouldForwardProp('type')).toBe(false);
+  it('valid prop type returns true', () => {
+    expect(shouldForwardProp('type')).toBe(true);
   });
 
   it('invalid prop cursor returns false', () => {
