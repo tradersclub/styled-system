@@ -10,58 +10,57 @@ describe('shouldForwardProp_function', () => {
     expect(result).toBe(false);
   });
 
-  // Tests that an invalid prop name returns true
-  it('invalid prop name returns true', () => {
+  it('valid prop invalidPropName returns true', () => {
     expect(shouldForwardProp('invalidPropName')).toBe(true);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop overflowY returns false', () => {
     expect(shouldForwardProp('overflowY')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop zIndex returns false', () => {
     expect(shouldForwardProp('zIndex')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop objectFit returns false', () => {
     expect(shouldForwardProp('objectFit')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop textShadow returns false', () => {
     expect(shouldForwardProp('textShadow')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop colors returns false', () => {
     expect(shouldForwardProp('colors')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop textStyle returns false', () => {
     expect(shouldForwardProp('textStyle')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop variant returns false', () => {
     expect(shouldForwardProp('variant')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop size returns false', () => {
     expect(shouldForwardProp('size')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop typography returns false', () => {
     expect(shouldForwardProp('typography')).toBe(false);
   });
 
-  it('invalid prop name returns true', () => {
-    expect(shouldForwardProp('type')).toBe(false);
+  it('valid prop type returns true', () => {
+    expect(shouldForwardProp('type')).toBe(true);
   });
 
-  it('invalid prop name returns true', () => {
+  it('invalid prop cursor returns false', () => {
     expect(shouldForwardProp('cursor')).toBe(false);
   });
-  it('invalid prop name returns true', () => {
+  it('invalid prop gridColumnGap returns false', () => {
     expect(shouldForwardProp('gridColumnGap')).toBe(false);
   });
-  it('invalid prop name returns true', () => {
+  it('invalid prop listStylePosition returns false', () => {
     expect(shouldForwardProp('listStylePosition')).toBe(false);
   });
 

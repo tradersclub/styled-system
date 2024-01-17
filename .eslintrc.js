@@ -22,4 +22,12 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {},
+  overrides: [
+    {
+      files: [`*.test.*`, `**/test/**/*.js`],
+      env: {
+        'jest/globals': true,
+      },
+    },
+  ],
 };

@@ -34,7 +34,6 @@ export function shouldForwardProp(propName) {
     propName === 'variant' ||
     propName === 'size' ||
     propName === 'typography' ||
-    propName === 'type' ||
     propName === 'colors' ||
     propName === 'textStyle'
   );
